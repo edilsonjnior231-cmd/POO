@@ -1,0 +1,55 @@
+class Animal {
+    String nome;
+    String especie;
+
+    public Animal(String nome, String especie) {
+        this.nome = nome;
+        this.especie = especie;
+    }
+
+    public void comer() {
+        System.out.println(nome + " está se alimentando.");
+    }
+
+    public void andar() {
+        System.out.println(nome + " está caminhando.");
+    }
+}
+
+class Cachorro extends Animal {
+    public Cachorro(String nome, String especie) {
+        super(nome, especie);
+    }
+
+    public void latir() {
+        System.out.println(nome + " está latindo: Au Au!");
+    }
+}
+
+class Passaro extends Animal {
+    public Passaro(String nome, String especie) {
+        super(nome, especie);
+    }
+
+    public void voar() {
+        System.out.println(nome + " está batendo as asas e voando.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Cachorro dog = new Cachorro("Rex", "Pastor Alemão");
+        System.out.println("Nome: " + dog.nome + ", Espécie: " + dog.especie);
+        dog.comer();
+        dog.andar();
+        dog.latir();
+
+        System.out.println("-----");
+
+        Passaro bird = new Passaro("Loro", "Papagaio");
+        System.out.println("Nome: " + bird.nome + ", Espécie: " + bird.especie);
+        bird.comer();
+        bird.andar();
+        bird.voar();
+    }
+}
